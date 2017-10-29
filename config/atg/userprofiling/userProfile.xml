@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE gsa-template PUBLIC "-//Art Technology Group, Inc.//DTD General SQL Adapter//EN"
+        "http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+<!-- This file provides a starting point for extending the
+     profile repository.
+
+     The comments below coincide with the instructions in the
+     lab.
+ -->
+
+<gsa-template>
+    <item-descriptor name="user">
+        <!--  add properties from the "dynamusic_user" table here  -->
+        <table name="dynamusic_user" type="auxiliary" id-column-name="user_id">
+            <property name="info" column-name="info" data-type="string" category="dynamusic"/>
+            <property name="shareProfile" data-type="boolean"
+                      column-name="share_profile" category="dynamusic"/>
+        </table>
+
+        <!--  add properties from the "dynamusic_prefgenres" table here  -->
+        <table name="dynamusic_prefgenres" type="multi" id-column-name="id">
+            <property name="prefGenres" column-name="genre" data-type="set" component-data-type="string"
+                      category="dynamusic"/>
+        </table>
+
+        <!--  add properties from the "dynamusic_viewedartists" table here  -->
+        <table name="dynamusic_viewedartists" type="multi" id-column-name="user_id">
+            <property name="viewedArtists" column-name="artist_id" data-type="set" component-item-type="artist"
+                      repository="/dynamusic/SongsRepository" category="dynamusic"/>
+        </table>
+
+    </item-descriptor>
+
+</gsa-template>

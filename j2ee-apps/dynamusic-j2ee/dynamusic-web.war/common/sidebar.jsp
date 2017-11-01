@@ -20,6 +20,7 @@
             <a href="artists.jsp">Artists</a> <br>
             <a href="venues.jsp">Venues</a> <br>
             <a href="search.jsp">Search</a> <br>
+            <a href="quiz.jsp">Quiz</a> <br>
             <dsp:droplet name="Switch">
                 <dsp:param name="value" bean="Profile.transient"/>
                 <dsp:oparam name="true">
@@ -33,7 +34,6 @@
                     <a href="logout.jsp">Log Out</a> <br>
                 </dsp:oparam>
             </dsp:droplet>
-
         </b>
     </font>
 </dsp:page>

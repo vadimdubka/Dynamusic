@@ -14,9 +14,6 @@ public class ArtistFormHandler extends RepositoryFormHandler {
     private SongsManager songsManager;
     private String userId;
     
-    public ArtistFormHandler() {
-    }
-    
     public SongsManager getSongsManager() {
         return songsManager;
     }

@@ -85,6 +85,7 @@ public class QuizFormHandler extends GenericFormHandler {
         return true;
     }
     
+    @Override
     public boolean handleCancel(DynamoHttpServletRequest request, DynamoHttpServletResponse response) {
         if (isLoggingDebug()) {
             logDebug("QuizFormHandler handleCancel method is invoked.");
@@ -93,15 +94,4 @@ public class QuizFormHandler extends GenericFormHandler {
         userAnswer = null;
         return true;
     }
-    
-    // TODO Create quiz and quiz answer pages
-/*
-4.	Create a page called quiz.jsp that implements a form to ask the user the pre-defined trivia question and accept a text answer.  Your form should be processed by your custom QuizFormHandler component with the text input field attached to the userAnswer property (which should be marked required).  Set the success URL to a page called quizAnswer.jsp, which you will create in the next step.
-5.	Include error handling using ErrorMessageForEach on quiz.jsp.  Review the forms you created in Chapter 6 for usage.
-6.	Create a page called quizAnswer.jsp that checks the results (using a Switch servlet bean switching on the correctAnswer boolean property) of the quiz answer validation and renders an appropriate message.
-*/
-
-//TODO сделать ссылку на квиз с сайта
-    
-    
 }

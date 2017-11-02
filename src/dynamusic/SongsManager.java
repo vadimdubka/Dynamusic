@@ -14,10 +14,6 @@ public class SongsManager extends GenericService {
     private Repository repository;
     private TransactionManager transactionManager;
     
-    public SongsManager() {
-        super();
-    }
-    
     public Repository getRepository() {
         return repository;
     }
@@ -34,7 +30,7 @@ public class SongsManager extends GenericService {
         this.transactionManager = transactionManager;
     }
     
-    public void deleteAlbumsByArtist(String artistId) {
+    public void deleteAlbumsByArtist(String artistId) throws RepositoryException {
         if (isLoggingDebug()) {
             logDebug("Deleting albums by artist id " + artistId);
         }
@@ -43,7 +39,7 @@ public class SongsManager extends GenericService {
         
         TransactionDemarcation transacDemar = new TransactionDemarcation();
         try {
-            transacDemar.begin(transactionManager, transacDemar.REQUIRED);
+            transacDemar.begin(transactionManager, TransactionDemarcation.REQUIRED);
             
             try {
                 RqlStatement findAlbumRQL = RqlStatement.parseRqlStatement("artist.id = ?0");

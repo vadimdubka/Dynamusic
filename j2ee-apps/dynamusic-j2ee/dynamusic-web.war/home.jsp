@@ -1,4 +1,3 @@
-<%--<%@ taglib prefix="dsp" uri="/dspTaglib"  %>--%>
 <%@ taglib prefix="dsp" uri="http://www.atg.com/taglibs/daf/dspjspELTaglib1_0" %>
 <dsp:importbean bean="/atg/userprofiling/Profile"/>
 <dsp:importbean bean="/dynamusic/FeaturedSongs"/>
@@ -28,7 +27,6 @@ artists.
     <dsp:include page="common/header.jsp">
         <dsp:param name="pagename" value="Home Page"/>
     </dsp:include>
-    <!-- End header banner -->
 
     <table width="700" cellpadding="8">
         <tr>
@@ -36,7 +34,6 @@ artists.
             <td width="100" bgcolor="ghostwhite" valign="top">
                 <dsp:include page="common/sidebar.jsp"/>
             </td>
-            <!-- End Sidebar -->
 
             <!-- Page Body -->
             <td valign="top">
@@ -83,9 +80,9 @@ artists.
                                         <dsp:a href="albumDetails.jsp">
                                             <dsp:param name="itemId" param="element.id"/>
                                             <dsp:param name="dsource" value="albumpromo"/>
-                                            <img src="<dsp:valueof param='element.coverURL'/>"/><br>
-                                            <b><dsp:valueof param='element.title'/></b> -
-                                            <dsp:valueof param='element.artist.name'/>
+                                            <img src="<dsp:valueof param="element.coverURL"/>"/><br>
+                                            <b><dsp:valueof param="element.title"/></b> -
+                                            <dsp:valueof param="element.artist.name"/>
                                         </dsp:a>
                                     </dsp:oparam>
                                 </dsp:droplet>
@@ -132,22 +129,6 @@ artists.
                                 </dsp:droplet>
                             </td>
                         </tr>
-
-
-                        <tr>
-                            <td valign="top">Playing at a venue near you...
-                                <p>
-                                <ul>
-                                    <li>22 May 2004 - <a href="concertDetails.html">Eric Clapton at the House of
-                                        Blues</a>
-                                    <li>9 June 2004 - <a href="concertDetails.html">Loreena McKennitt at Sanders
-                                        Theater</a>
-                                    <li>14 June 2004 - <a href="concertDetails.html">Shania Twain at the Fleet
-                                        Center</a>
-                                </ul>
-                            </td>
-                        </tr>
-
                     </table>
                     <!-- *** End real content *** -->
                 </font>

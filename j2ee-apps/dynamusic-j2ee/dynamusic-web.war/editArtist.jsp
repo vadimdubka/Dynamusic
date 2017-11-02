@@ -33,7 +33,7 @@
                 <font face="Verdana,Geneva,Arial" size="-1">
 
                     <!-- *** Start page content *** -->
-                    <dsp:setvalue bean="ArtistFormHandler.repositoryId" paramvalue="artistId"/>
+                    <dsp:setvalue bean="ArtistFormHandler.repositoryId" paramvalue="w"/>
 
                     <dsp:form action="editArtist.jsp" method="post">
 
@@ -44,7 +44,6 @@
                         </dsp:droplet>
 
                         <table cellpadding="10">
-
                             <tr>
                                 <td valign="middle"> Artist Name:</td>
                                 <td valign="middle">

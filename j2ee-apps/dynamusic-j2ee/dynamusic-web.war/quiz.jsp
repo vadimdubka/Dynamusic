@@ -23,14 +23,12 @@
         <tr>
             <!-- Sidebar -->
             <td width="100" bgcolor="ghostwhite" valign="top">
-                <dsp:include page="common/sidebar.jsp"></dsp:include>
+                <dsp:include page="common/sidebar.jsp"/>
             </td>
 
             <!-- Page Body -->
             <td valign="top">
                 <font face="Verdana,Geneva,Arial" size="-1">
-
-                    <!-- *** Start page content *** -->
 
                     <!-- Default form Error Handling support -->
                     <dsp:droplet name="/atg/dynamo/droplet/ErrorMessageForEach">
@@ -38,7 +36,7 @@
                             <li><dsp:valueof param="message"/></li>
                         </dsp:oparam>
                         <dsp:oparam name="outputStart">
-                            <font color="red">I encountered problems processing this form:
+                            <font color="red">Problems appeared in processing this form:
                             <ul>
                         </dsp:oparam>
                         <dsp:oparam name="outputEnd">

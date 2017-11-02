@@ -12,23 +12,44 @@
     <item-descriptor name="user">
         <!--  add properties from the "dynamusic_user" table here  -->
         <table name="dynamusic_user" type="auxiliary" id-column-name="user_id">
-            <property name="info" column-name="info" data-type="string" category="dynamusic"/>
-            <property name="shareProfile" data-type="boolean"
-                      column-name="share_profile" category="dynamusic"/>
+            <property name="info" column-name="info" data-type="string"
+                      category="dynamusic"/>
+            <property name="shareProfile" data-type="boolean" column-name="share_profile"
+                      category="dynamusic"/>
         </table>
 
         <!--  add properties from the "dynamusic_prefgenres" table here  -->
         <table name="dynamusic_prefgenres" type="multi" id-column-name="id">
-            <property name="prefGenres" column-name="genre" data-type="set" component-data-type="string"
+            <property name="prefGenres" column-name="genre" data-type="set"
+                      component-data-type="string"
                       category="dynamusic"/>
         </table>
 
         <!--  add properties from the "dynamusic_viewedartists" table here  -->
         <table name="dynamusic_viewedartists" type="multi" id-column-name="user_id">
-            <property name="viewedArtists" column-name="artist_id" data-type="set" component-item-type="artist"
-                      repository="/dynamusic/SongsRepository" category="dynamusic"/>
+            <property name="viewedArtists" column-name="artist_id" data-type="set"
+                      component-item-type="artist" repository="/dynamusic/SongsRepository"
+                      category="dynamusic"/>
         </table>
 
+        <table name="dynamusic_user_playlists" type="multi" id-column-name="user_id">
+            <property name="playlists" column-name="pl_id" data-type="set" component-item-type="playlist"
+                      category="dynamusic_playlist"/>
+        </table>
+    </item-descriptor>
+
+    <item-descriptor name="playlist" display-property="name">
+        <table name="dynamusic_playlist" type="primary" id-column-name="id">
+            <property name="id" column-name="id" data-type="string" category="dynamusic_playlist"/>
+            <property name="name" column-name="name" data-type="string" category="dynamusic_playlist"/>
+            <property name="description" column-name="description" data-type="string" category="dynamusic_playlist"/>
+            <property name="publish" column-name="publish" data-type="boolean" category="dynamusic_playlist"/>
+        </table>
+
+        <table name="dynamusic_playlist_song" type="multi" id-column-name="pl_id">
+            <property name="songs" column-name="song_id" data-type="set"
+                      component-item-type="song" repository="/dynamusic/SongsRepository" category="dynamusic_playlist"/>
+        </table>
     </item-descriptor>
 
 </gsa-template>
